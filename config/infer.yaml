@@ -1,0 +1,34 @@
+wav2lip:
+  fps: 25
+  save_vid: True
+  text0: "明天下午有一场篮球赛，你想去看吗"
+  text1: "我想，具体是什么时间呢"
+  text2: "那我们一起去吧"
+  timbre0: 'xiaoyan' # 声音音色 xiaoyan, aisjiuxu, aisxping, aisjinger, aisbabyxu
+  timbre1: 'aisjiuxu'
+  aud_speed: 40  # 语速设置
+  audio_path0: '' 
+  audio_path1: '' 
+  audio_path2: '' 
+  video_path: 'tools/chsy/2_people.mp4'
+  model_path: 'modelhub/wav2lip_cn.pth'
+
+common_args:
+  coverage: 1.5
+  output_size: 192
+  aligner_resolution: 224
+  face_coverage: 2.2
+  exclude_moving_parts: True
+  head_yaw: 
+  x_offset: 0.0
+  y_offset: 0.0
+  sharpen_power: 1
+  median_blur_per: 50
+  degrade_bicubic_per: 50
+  face_x_offset: 0
+  face_y_offset: 0
+  face_scale: 1
+  do_color_compression: 'rct'
+  face_mask_erode: 10
+  face_mask_blur: 20
+  

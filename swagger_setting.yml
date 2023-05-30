@@ -1,0 +1,108 @@
+AI虚拟人v3的API接口
+输入文本与背景视频, 输出播报视频
+---
+tags:
+  - AI虚拟人 API
+parameters:
+  - name: callback
+    in: formData
+    type: string
+    required: false
+    description: callback
+  - name: id
+    in: formData
+    type: string
+    required: false
+    description: id
+  - name: image_url
+    in: formData
+    type: string
+    required: true
+    description: image_url
+  - name: tts
+    in: formData
+    type: string
+    required: true
+    description: tts
+  - name: content
+    in: formData
+    type: string
+    required: true
+    description: content
+  - name: audio_url
+    in: formData
+    type: string
+    required: false
+    description: audio_url
+  - name: location
+    in: formData
+    type: string
+    required: false
+    description: location
+  - name: pose
+    in: formData
+    type: string
+    required: false
+    description: pose
+  - name: background
+    in: formData
+    type: string
+    required: false
+    description: background
+responses:
+  500:
+    description: input data error
+  200:
+    description: AI anchor URL
+    schema:
+      id: results
+      properties:
+        result:
+          type: string
+          description: anchor result
+          default:
+        time:
+          type: string
+          description: anchor time
+          default:
+
+#更新人：陈博
+#更新内容：虚拟人v3.0智能创作平台算法 解决线上服务被反爬虫机制拦截的bug
+#日期：20220713
+#
+#l 服务名称：虚拟人v3.0智能创作平台算法
+#（actorv3-online:v1.11）
+#l 镜像id：3e34b08f5abf
+#l 接口：http://192.168.10.87:7353/actor3
+#l GPU：只能gpu
+#l docker内部端口号：7353
+#l docker外部端口号：
+#l form请求参数：{
+#      callback  str Y 回调地址  "http://bjcloudhongqi.wengegroup.com:10022/artificial_intelligence_anchor/api/virtual/task/callback"
+#      id  str Y 任务id
+#      image_ur  str Y 角色id "gpei.png"
+#      tts  str Y  发音人  "x2_yifei"
+#      content  str Y 讲话文字  "你好啊"
+#      audio_url  str Y 讲话语音（同content二选一填入或者都填入皆可）http://bjcloudhongqi.wengegroup.com:8387/bucket-ai-anchor/617498cff87f4ecf9500bc828b83f2b6.wav
+#      location  str Y 虚拟人在背景图中的位置坐标  "920,127,1517,900"
+#      pose  int Y 姿势 1
+#      background   str Y 背景图片或者视频   http://source.wengegroup.com/bucket-ai-anchor/6243c484e4b0fc4c4aadf78a.jpg
+# }
+#l json请求参数：{
+#      callback  str Y 回调地址  "http://bjcloudhongqi.wengegroup.com:10022/artificial_intelligence_anchor/api/virtual/task/callback"
+#      id  str Y 任务id
+#      image_ur  str Y 角色id "gpei.png"
+#      tts  str Y  发音人  "x2_yifei"
+#      content  str Y 讲话文字  "你好啊"
+#      audio_url  str Y 讲话语音（同content二选一填入或者都填入皆可）http://bjcloudhongqi.wengegroup.com:8387/bucket-ai-anchor/617498cff87f4ecf9500bc828b83f2b6.wav
+#      location  str Y 虚拟人在背景图中的位置坐标  "920,127,1517,900"
+#      pose  int Y 姿势 1
+#      background   str Y 背景图片或者视频   http://source.wengegroup.com/bucket-ai-anchor/6243c484e4b0fc4c4aadf78a.jpg
+#  }
+#l 响应参数：{
+#      id  str Y 任务id
+#      data  str Y 返回的视频合成url
+#      thumbnail  str Y 暂时没啥用
+#      code  int Y 状态（200正常，500错误）
+#      progress  int Y 进度 （1、2、3、4、5、6、100）
+# }
